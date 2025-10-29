@@ -1,0 +1,43 @@
+Results below for running the following comamnd
+
+mvn -pl app -am clean dependency:tree \
+  -Dincludes=com.fasterxml.jackson.core:jackson-databind \
+  -Dverbose >> output.txt
+
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] nearest-wins-no-bom                                                [pom]
+[INFO] app                                                                [jar]
+[INFO] 
+[INFO] ------------------< com.example:nearest-wins-no-bom >-------------------
+[INFO] Building nearest-wins-no-bom 1.0.0                                 [1/2]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ nearest-wins-no-bom ---
+[INFO] 
+[INFO] --- dependency:3.7.0:tree (default-cli) @ nearest-wins-no-bom ---
+[INFO] 
+[INFO] --------------------------< com.example:app >---------------------------
+[INFO] Building app 1.0.0                                                 [2/2]
+[INFO]   from app/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ app ---
+[INFO] 
+[INFO] --- dependency:3.7.0:tree (default-cli) @ app ---
+[INFO] com.example:app:jar:1.0.0
+[INFO] \- com.fasterxml.jackson.core:jackson-databind:jar:2.18.2:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for nearest-wins-no-bom 1.0.0:
+[INFO] 
+[INFO] nearest-wins-no-bom ................................ SUCCESS [  0.240 s]
+[INFO] app ................................................ SUCCESS [  0.017 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.345 s
+[INFO] Finished at: 2025-10-29T11:23:24-04:00
+[INFO] ------------------------------------------------------------------------
